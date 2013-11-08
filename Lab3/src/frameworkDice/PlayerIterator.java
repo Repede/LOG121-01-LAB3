@@ -3,24 +3,34 @@ Course:  LOG121
 Project: Laboratoire 3
 Filename: PlayerIterator.java
 
-@author 	André-Philippe Boulet, Maude Payette, Hugo Desjardins-Libero
+@author 	Andre-Philippe Boulet, Maude Payette, Hugo Desjardins-Libero
 @created	2013-11-01 Initial version
  *******************************************************/
 
 package frameworkDice;
+
+import java.util.ArrayList;
 import java.util.Iterator;
 
-public class PlayerIterator implements Iterator<Player> {
+public class PlayerIterator implements Iterator<Player>
+{
+	private ArrayList<Player> players;
+	private int position = 0;
+	
+	public PlayerIterator(ArrayList<Player> players)
+	{
+		this.players = players;
+	}
 
 	@Override
 	/**
 	 * Is there a next player in the loop
 	 * @author: 
-	 * @return 	A score integer
+	 * @return 	boolean
 	 */
-	public boolean hasNext() {
-
-		return false;
+	public boolean hasNext()
+	{
+		return position < players.size();
 	}
 
 	@Override
@@ -29,8 +39,12 @@ public class PlayerIterator implements Iterator<Player> {
 	 * @author: 
 	 * @return 	A player
 	 */
-	public Player next() {
-		
+	public Player next()
+	{
+		if(hasNext())
+		{
+			return players.get(++position);
+		}
 		return null;
 	}
 
@@ -39,8 +53,9 @@ public class PlayerIterator implements Iterator<Player> {
 	 * Remove the current player
 	 * @author: 
 	 */
-	public void remove() {
-		
+	public void remove()
+	{
+		players.remove(position);
 	}
 
 }

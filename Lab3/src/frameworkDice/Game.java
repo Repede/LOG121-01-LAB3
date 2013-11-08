@@ -3,81 +3,84 @@ Course:  LOG121
 Project: Laboratoire 3
 Filename: Game.java
 
-@author 	André-Philippe Boulet, Maude Payette, Hugo Desjardins-Libero
+@author 	Andre-Philippe Boulet, Maude Payette, Hugo Desjardins-Libero
 @created	2013-11-01 Initial version
  *******************************************************/
 
-
 package frameworkDice;
 
+import java.util.Collections;
 
-
-public class Game
+public class Game implements IStrategyGame
 {
 	private int numberOfTurn;
 	private DiceCollection diceCollection;
 	private PlayerCollection playerCollection;
-	
-	
+
+	public Game(int numOfTurn, int numOfDice)
+	{
+		numberOfTurn = numOfTurn;
+	}
 	/**
 	 * Call subclass to find the total score for this turn.
-	 * @author: 
-	 * @param 	leDepuisFile   File de la pièce à déplacer
-	 * @return 	A score integer
+	 * 
+	 * @author:
+	 * @param leDepuisFile
+	 * 
+	 * @return A score integer
 	 */
-	public int calculateTurnScore() 
+	public int calculateTurnScore()
 	{
 		return 0;
 	}
-	
-	
+
 	/**
 	 * Call subclass to find the total score for this turn.
-	 * @author: 
-	 * @param 	leDepuisFile   File de la pièce à déplacer
-	 * @return 	The player who won
+	 * 
+	 * @author:
+	 * @param leDepuisFile
+	 * 
+	 * @return The player who won
 	 */
-	public Player calculateWinner() 
+	public Player calculateWinner()
 	{
 		return null;
 	}
-	
-	public void initialize() {
+
+	public void initialize()
+	{
 
 		// GetDices : DiceCollection
-		
+
 		// GetNumberOfTurn
 
 		// AskPlayerInformation
 	}
-	
-	
-	
-	public void play() {
+
+	public void play()
+	{
 		
 		// Foreach Turns
-			// Turn currentTurn = new Turn(DiceCollection);
-			// While( PlayerCollection.hasNext() )
-				// currentTurn.setCurrentPlayer(PlayerCollection.next());
-				// Do 
-					// Turn.roll(currentPlayer)
-				// While turn.isDone() 
+		// Turn currentTurn = new Turn(DiceCollection);
+		// While( PlayerCollection.hasNext() )
+		// currentTurn.setCurrentPlayer(PlayerCollection.next());
+		// Do
+		// Turn.roll(currentPlayer)
+		// While turn.isDone()
 
 		// Calculate Winner
 		// Game.announeWinner(Player)
 	}
-	
-	
-	
-	
+
 	/**
 	 * Call subclass to find the total score for this turn.
-	 * @author: 
-	 * @param leDepuisFile   File de la pièce à déplacer
+	 * 
+	 * @author:
+	 * @param leDepuisFile
+	 * 
 	 * @return le score
 	 */
-	public void askNumberOfPlayer() 
+	public void askNumberOfPlayer()
 	{
-
 	}
 }
