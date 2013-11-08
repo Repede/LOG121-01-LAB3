@@ -1,5 +1,6 @@
 package frameworkDice;
 
+
 public class Turn
 {
 	private Player currentPlayer;
@@ -14,7 +15,11 @@ public class Turn
 	
 	public void roll()
 	{
-		
+		DiceIterator iter = diceCollection.createIterator();
+		while(iter.hasNext())
+		{
+			iter.next().roll();
+		}
 	}
 	
 	public boolean isDone()
@@ -24,6 +29,6 @@ public class Turn
 	
 	public void setCurrentPlayer(Player player)
 	{
-		
+		currentPlayer = player;
 	}
 }
