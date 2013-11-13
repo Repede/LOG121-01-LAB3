@@ -20,7 +20,13 @@ public class Player implements Comparable<Player>
 		this.name = name;
 		score = 0;
 	}
-
+	
+	public String getName() {
+		return name;
+	}
+	
+	
+	
 	/**
 	 * Between 2 players, find whom has the higher score
 	 * 
@@ -32,6 +38,11 @@ public class Player implements Comparable<Player>
 	public int compareTo(Player otherPlayer)
 	{
 		return Integer.compare(this.score, otherPlayer.score);
+	}
+	
+	public void addScore(int score)
+	{
+		this.score += score;
 	}
 	
 	public int getScore()

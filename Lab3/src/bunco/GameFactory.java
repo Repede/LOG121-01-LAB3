@@ -1,13 +1,13 @@
 package bunco;
 
 import java.util.Scanner;
-import java.util.Stack;
+//import java.util.Stack;
 
 import frameworkDice.Player;
 
 public class GameFactory {
 
-	Stack<Game> gameCollection;
+	//Stack<Game> gameCollection;
 	
 
 	static public Game createGame() {
@@ -35,7 +35,4 @@ public class GameFactory {
 		return newGame;
 	}
 	
-	/*static public Game createFromGame(Game fromGame) {
-		return new Game(fromGame.numberOfTurns, fromGame.numberOfDices);
-	}*/
 }

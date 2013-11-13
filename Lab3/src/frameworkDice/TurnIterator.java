@@ -43,7 +43,7 @@ public class TurnIterator implements Iterator<Turn>
 	{
 		if(hasNext())
 		{
-			return turns.get(++position);
+			return turns.get(position++);
 		}
 		return null;
 	}

@@ -42,7 +42,7 @@ public class DiceIterator implements Iterator<Dice>
 	{
 		if(hasNext())
 		{
-			return dices.get(++position);
+			return dices.get(position++);
 		}
 		return null;
 	}

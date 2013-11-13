@@ -47,9 +47,15 @@ public class Dice implements Comparable<Dice>
 	public int roll()
 	{
 		int face = 1 + (int) Math.round(Math.random() * (numberOfFaces - 1));
-		return getFace(face);
+		currentFaceNumber = getFace(face);
+		return currentFaceNumber;
 	}
-
+	
+	public int getResult() {
+		return currentFaceNumber;
+	}
+	
+	
 	/**
 	 * Create an object to iterate this diceCollection
 	 * 

@@ -43,7 +43,7 @@ public class PlayerIterator implements Iterator<Player>
 	{
 		if(hasNext())
 		{
-			return players.get(++position);
+			return players.get(position++);
 		}
 		return null;
 	}

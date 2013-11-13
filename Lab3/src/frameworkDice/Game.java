@@ -68,7 +68,7 @@ public class Game implements IStrategyGame
 		while(iter.hasNext())
 		{
 			Player curPlayer = iter.next();
-			if(curPlayer.getScore() > winscore)
+			if(curPlayer.getScore() >= winscore)
 			{
 				winscore = curPlayer.getScore();
 				winner = curPlayer;
@@ -92,31 +92,44 @@ public class Game implements IStrategyGame
 	{
 		
 		TurnIterator turnsIterator = turnCollection.createIterator();
+		int turnNumber = 0;
 		while( turnsIterator.hasNext() ) {
 			
 			Turn currentTurn = turnsIterator.next();
+			currentTurn.setTurnNumber(++turnNumber);
 			
 			PlayerIterator playersIterator = playerCollection.createIterator();
 			while( playersIterator.hasNext() ) {
+								
 				
-				currentTurn.setCurrentPlayer(playersIterator.next());
+				Player currentPlayer = playersIterator.next();				
+				currentTurn.setCurrentPlayer(currentPlayer);				
 				
-				currentTurn.roll();
-				System.out.println("Rolled...");
+				do {
+					currentTurn.roll();
+				} while (!currentTurn.isDone());	
 				
+				
+				currentTurn.tellResult();			
 			}
 		}
-		
-		// Foreach Turns
-		// Turn currentTurn = new Turn(DiceCollection);
-		// While( PlayerCollection.hasNext() )
-		// currentTurn.setCurrentPlayer(PlayerCollection.next());
-		// Do
-		// Turn.roll(currentPlayer)
-		// While turn.isDone()
 
-		// Calculate Winner
-		// Game.announeWinner(Player)
+		
+		System.out.println("All turns have been played.");
+
+		PlayerIterator playersIterator = playerCollection.createIterator();
+		while(playersIterator.hasNext()) {
+			Player player = playersIterator.next();
+			System.out.println(player.getName() + " got " +player.getScore()+ " points");
+		}
+		
+		Player winner = calculateWinner();
+		if(winner != null) {
+			System.out.println("The game has been won by " + winner.getName());
+		}
+		else {
+			System.out.println("The game is a draw !");
+		}
 	}
 
 	/**

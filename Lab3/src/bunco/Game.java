@@ -10,15 +10,9 @@ public class Game extends frameworkDice.Game {
 		super(numOfTurn, numOfDice);
 		// TODO Auto-generated constructor stub
 	}
-
-	public Player calculateWinner() {
-		return null;
-	}
-	
 	
 	
 	public void addDice(int numberOfFaces) {
-		
 		Dice newDice = new Dice(numberOfFaces);
 		diceCollection.addDice(newDice);
 	}
