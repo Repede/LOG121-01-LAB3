@@ -11,9 +11,10 @@ package frameworkDice;
 
 public class Game implements IStrategyGame
 {
-	private int numberOfTurn;
-	private DiceCollection diceCollection;
-	private PlayerCollection playerCollection;
+	protected int numberOfTurn;
+	protected TurnCollection turnCollection;
+	protected DiceCollection diceCollection;
+	protected PlayerCollection playerCollection;
 
 	public Game(int numOfTurn, int numOfDice)
 	{
