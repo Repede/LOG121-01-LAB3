@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class TurnCollection
 {
 
-	private ArrayList<Turn> listTurns;
+	private ArrayList<Turn> listTurns = new ArrayList<Turn>();
 
 	/**
 	 * Add a player to our collection

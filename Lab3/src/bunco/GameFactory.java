@@ -22,7 +22,7 @@ public class GameFactory {
 		numberOfPlayer = s.nextInt();
 		for(int i=0; i<numberOfPlayer; i++) {
 			
-			System.out.print("Please player "+i+" name : ");
+			System.out.print("Please player "+(i+1)+" name : ");
 			s = new Scanner(System.in);
 			
 			Player newPlayer = new Player(s.next());

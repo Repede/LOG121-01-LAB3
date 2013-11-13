@@ -6,16 +6,15 @@ public class Start {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		
-		Game newGame = GameFactory.createGame();
-		
+		Game newGame = GameFactory.createGame();		
 		
 
-		System.out.println("La partie démarre !");
+		System.out.println("The game is stating !");
 		newGame.play();
 		
-		System.out.println("La partie est terminé.");
+		System.out.println("The game has ended.");
 	}
 
 }

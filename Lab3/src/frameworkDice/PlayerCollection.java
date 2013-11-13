@@ -15,7 +15,7 @@ import java.util.Collections;
 public class PlayerCollection
 {
 
-	private ArrayList<Player> listPlayers;
+	private ArrayList<Player> listPlayers = new ArrayList<Player>();
 
 	/**
 	 * Add a player to our collection

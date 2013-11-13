@@ -18,8 +18,27 @@ public class Game implements IStrategyGame
 
 	public Game(int numOfTurn, int numOfDice)
 	{
-		numberOfTurn = numOfTurn;
+		turnCollection  = new TurnCollection();
+		diceCollection  = new DiceCollection();
+		playerCollection  = new PlayerCollection();
+		
+		for(int i=0; i<numOfTurn; i++) {
+			this.addTurn();
+		}
+		
+		for(int i=0; i<numOfDice; i++) {
+			this.addDice(6);
+		}		
 	}
+	
+	public void addDice(int numberOfFaces) {
+			
+	}
+	
+	public void addTurn() {
+		
+	}
+	
 	/**
 	 * Call subclass to find the total score for this turn.
 	 * 
@@ -71,6 +90,22 @@ public class Game implements IStrategyGame
 
 	public void play()
 	{
+		
+		TurnIterator turnsIterator = turnCollection.createIterator();
+		while( turnsIterator.hasNext() ) {
+			
+			Turn currentTurn = turnsIterator.next();
+			
+			PlayerIterator playersIterator = playerCollection.createIterator();
+			while( playersIterator.hasNext() ) {
+				
+				currentTurn.setCurrentPlayer(playersIterator.next());
+				
+				currentTurn.roll();
+				System.out.println("Rolled...");
+				
+			}
+		}
 		
 		// Foreach Turns
 		// Turn currentTurn = new Turn(DiceCollection);

@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class DiceCollection
 {
 
-	private ArrayList<Dice> listDices;
+	private ArrayList<Dice> listDices = new ArrayList<Dice>();
 
 	/**
 	 * Add a player to our collection
