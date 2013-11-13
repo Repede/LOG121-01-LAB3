@@ -93,6 +93,6 @@ public class Game implements IStrategyGame
 	 */
 	public void askNumberOfPlayer()
 	{
-		
+		//
 	}
 }
