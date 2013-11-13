@@ -9,8 +9,6 @@ Filename: Game.java
 
 package frameworkDice;
 
-import java.util.Collections;
-
 public class Game implements IStrategyGame
 {
 	private int numberOfTurn;
@@ -44,7 +42,20 @@ public class Game implements IStrategyGame
 	 */
 	public Player calculateWinner()
 	{
-		return null;
+		Player winner = null;
+		int winscore = 0;
+		PlayerIterator iter = playerCollection.createIterator();
+		while(iter.hasNext())
+		{
+			Player curPlayer = iter.next();
+			if(curPlayer.getScore() > winscore)
+			{
+				winscore = curPlayer.getScore();
+				winner = curPlayer;
+				
+			}
+		}
+		return winner;
 	}
 
 	public void initialize()
@@ -82,5 +93,6 @@ public class Game implements IStrategyGame
 	 */
 	public void askNumberOfPlayer()
 	{
+		
 	}
 }
