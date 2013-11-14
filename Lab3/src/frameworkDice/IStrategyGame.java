@@ -29,4 +29,11 @@ public interface IStrategyGame
 	 * @return The player who won
 	 */
 	abstract public Player calculateWinner();
+	
+	/**
+	 * Call class to display the score and the winner of the game.
+	 * 
+	 * @author: Maude
+	 */
+	abstract public void displayScore();
 }
