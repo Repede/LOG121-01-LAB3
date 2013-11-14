@@ -5,6 +5,7 @@ Filename: Dice.java
 
 @author 	Andre-Philippe Boulet, Maude Payette, Hugo Desjardins-Libero
 @created	2013-11-01 Initial version
+@updated	2013-11-11
  *******************************************************/
 
 package frameworkDice;
@@ -28,20 +29,21 @@ public class Dice implements Comparable<Dice>
 	/**
 	 * Between 2 dices, find whom has the higher value
 	 * 
-	 * @author:
+	 * @author: Hugo Desjardins Delibero, Andre-Philippe Boulet
 	 * @param otherDice
 	 *            The dice whom we which to compareTo
 	 * @return Which Dice has higher score
 	 */
 	public int compareTo(Dice otherDice)
 	{
-		return Integer.compare(this.currentFaceNumber, otherDice.currentFaceNumber);
+		return Integer.compare(this.currentFaceNumber,
+				otherDice.currentFaceNumber);
 	}
 
 	/**
 	 * Add a player to our collection
 	 * 
-	 * @author:
+	 * @author:Hugo Desjardins Delibero, Andre-Philippe Boulet
 	 * @return The result of the roll
 	 */
 	public int roll()
@@ -50,12 +52,18 @@ public class Dice implements Comparable<Dice>
 		currentFaceNumber = getFace(face);
 		return currentFaceNumber;
 	}
-	
-	public int getResult() {
+
+	/**
+	 * Gets the dice's face result
+	 * 
+	 * @author:Hugo Desjardins Delibero, Andre-Philippe Boulet
+	 * @return The face number
+	 */
+	public int getResult()
+	{
 		return currentFaceNumber;
 	}
-	
-	
+
 	/**
 	 * Create an object to iterate this diceCollection
 	 * 

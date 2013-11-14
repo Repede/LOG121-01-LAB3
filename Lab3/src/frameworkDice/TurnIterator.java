@@ -1,10 +1,10 @@
 /******************************************************
 Course:  LOG121
 Project: Laboratoire 3
-Filename: PlayerIterator.java
+Filename: TurnIterator.java
 
 @author 	Andre-Philippe Boulet, Maude Payette, Hugo Desjardins-Libero
-@created	2013-11-01 Initial version
+@created	2013-11-10 Initial version
  *******************************************************/
 
 package frameworkDice;
@@ -16,7 +16,7 @@ public class TurnIterator implements Iterator<Turn>
 {
 	private ArrayList<Turn> turns;
 	private int position = 0;
-	
+
 	public TurnIterator(ArrayList<Turn> turns)
 	{
 		this.turns = turns;
@@ -24,8 +24,8 @@ public class TurnIterator implements Iterator<Turn>
 
 	@Override
 	/**
-	 * Is there a next player in the loop
-	 * @author: 
+	 * Is there a next turn in the loop
+	 * @author: Andre-Philippe Boulet
 	 * @return 	boolean
 	 */
 	public boolean hasNext()
@@ -35,13 +35,13 @@ public class TurnIterator implements Iterator<Turn>
 
 	@Override
 	/**
-	 * Get the next player in the list
-	 * @author: 
-	 * @return 	A player
+	 * Get the next turn in the list
+	 * @author: Andre-Philippe Boulet
+	 * @return 	A turn
 	 */
 	public Turn next()
 	{
-		if(hasNext())
+		if (hasNext())
 		{
 			return turns.get(position++);
 		}
@@ -50,8 +50,8 @@ public class TurnIterator implements Iterator<Turn>
 
 	@Override
 	/**
-	 * Remove the current player
-	 * @author: 
+	 * Remove the current turn
+	 * @author: Andre-Philippe Boulet
 	 */
 	public void remove()
 	{

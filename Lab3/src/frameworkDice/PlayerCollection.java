@@ -20,7 +20,7 @@ public class PlayerCollection
 	/**
 	 * Add a player to our collection
 	 * 
-	 * @author:
+	 * @author: Andre-Philippe Boulet, Hugo Desjardins-Libero
 	 * @param newPlayer
 	 *            Player to add to our collection
 	 */
@@ -32,14 +32,20 @@ public class PlayerCollection
 	/**
 	 * Create an object to iterate this playerCollection
 	 * 
-	 * @author:
+	 * @author: Andre-Philippe Boulet, Hugo Desjardins-Libero
 	 * @return An object PlayerIterator to iterate our collection
 	 */
 	public PlayerIterator createIterator()
 	{
 		return new PlayerIterator(listPlayers);
 	}
-	
+
+	/**
+	 * Gets the size of the collection
+	 * 
+	 * @author: Hugo Desjardins-Libero
+	 * @return The collection's size
+	 */
 	public int getSize()
 	{
 		return listPlayers.size();

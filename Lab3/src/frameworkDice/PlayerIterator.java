@@ -5,6 +5,7 @@ Filename: PlayerIterator.java
 
 @author 	Andre-Philippe Boulet, Maude Payette, Hugo Desjardins-Libero
 @created	2013-11-01 Initial version
+@updated	2013-11-10
  *******************************************************/
 
 package frameworkDice;
@@ -16,7 +17,7 @@ public class PlayerIterator implements Iterator<Player>
 {
 	private ArrayList<Player> players;
 	private int position = 0;
-	
+
 	public PlayerIterator(ArrayList<Player> players)
 	{
 		this.players = players;
@@ -25,7 +26,7 @@ public class PlayerIterator implements Iterator<Player>
 	@Override
 	/**
 	 * Is there a next player in the loop
-	 * @author: 
+	 * @author: Andre-Philippe Boulet, Hugo Desjardins-Libero
 	 * @return 	boolean
 	 */
 	public boolean hasNext()
@@ -36,12 +37,12 @@ public class PlayerIterator implements Iterator<Player>
 	@Override
 	/**
 	 * Get the next player in the list
-	 * @author: 
+	 * @author: Andre-Philippe Boulet, Hugo Desjardins-Libero
 	 * @return 	A player
 	 */
 	public Player next()
 	{
-		if(hasNext())
+		if (hasNext())
 		{
 			return players.get(position++);
 		}
@@ -51,7 +52,7 @@ public class PlayerIterator implements Iterator<Player>
 	@Override
 	/**
 	 * Remove the current player
-	 * @author: 
+	 * @author: Andre-Philippe Boulet, Hugo Desjardins-Libero
 	 */
 	public void remove()
 	{

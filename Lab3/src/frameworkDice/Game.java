@@ -5,6 +5,7 @@ Filename: Game.java
 
 @author 	Andre-Philippe Boulet, Maude Payette, Hugo Desjardins-Libero
 @created	2013-11-01 Initial version
+@updated	2013-11-12
  *******************************************************/
 
 package frameworkDice;
@@ -18,32 +19,35 @@ public class Game implements IStrategyGame
 
 	public Game(int numOfTurn, int numOfDice)
 	{
-		turnCollection  = new TurnCollection();
-		diceCollection  = new DiceCollection();
-		playerCollection  = new PlayerCollection();
-		
-		for(int i=0; i<numOfTurn; i++) {
+		turnCollection = new TurnCollection();
+		diceCollection = new DiceCollection();
+		playerCollection = new PlayerCollection();
+
+		for (int i = 0; i < numOfTurn; i++)
+		{
 			this.addTurn();
 		}
-		
-		for(int i=0; i<numOfDice; i++) {
+
+		for (int i = 0; i < numOfDice; i++)
+		{
 			this.addDice(6);
-		}		
+		}
 	}
-	
-	public void addDice(int numberOfFaces) {
-			
+
+	public void addDice(int numberOfFaces)
+	{
+
 	}
-	
-	public void addTurn() {
-		
+
+	public void addTurn()
+	{
+
 	}
-	
+
 	/**
 	 * Call subclass to find the total score for this turn.
 	 * 
-	 * @author:
-	 * @param leDepuisFile
+	 * @author: Hugo Desjardins-Libero, Andre-Philippe Boulet
 	 * 
 	 * @return A score integer
 	 */
@@ -55,8 +59,7 @@ public class Game implements IStrategyGame
 	/**
 	 * Call subclass to find the total score for this turn.
 	 * 
-	 * @author:
-	 * @param leDepuisFile
+	 * @author: Hugo Desjardins-Libero, Andre-Philippe Boulet
 	 * 
 	 * @return The player who won
 	 */
@@ -65,19 +68,24 @@ public class Game implements IStrategyGame
 		Player winner = null;
 		int winscore = 0;
 		PlayerIterator iter = playerCollection.createIterator();
-		while(iter.hasNext())
+		while (iter.hasNext())
 		{
 			Player curPlayer = iter.next();
-			if(curPlayer.getScore() >= winscore)
+			if (curPlayer.getScore() >= winscore)
 			{
 				winscore = curPlayer.getScore();
 				winner = curPlayer;
-				
+
 			}
 		}
 		return winner;
 	}
-
+	/**
+	 * Initializes the game
+	 * 
+	 * @author: Hugo Desjardins-Libero, Andre-Philippe Boulet
+	 * 
+	 */
 	public void initialize()
 	{
 
@@ -87,61 +95,56 @@ public class Game implements IStrategyGame
 
 		// AskPlayerInformation
 	}
-
+	/**
+	 * Plays the game
+	 * 
+	 * @author: Hugo Desjardins-Libero, Andre-Philippe Boulet
+	 * 
+	 */
 	public void play()
 	{
-		
+
 		TurnIterator turnsIterator = turnCollection.createIterator();
 		int turnNumber = 0;
-		while( turnsIterator.hasNext() ) {
-			
+		while (turnsIterator.hasNext())
+		{
+
 			Turn currentTurn = turnsIterator.next();
 			currentTurn.setTurnNumber(++turnNumber);
-			
+
 			PlayerIterator playersIterator = playerCollection.createIterator();
-			while( playersIterator.hasNext() ) {
-								
-				
-				Player currentPlayer = playersIterator.next();				
-				currentTurn.setCurrentPlayer(currentPlayer);				
-				
-				do {
+			while (playersIterator.hasNext())
+			{
+
+				Player currentPlayer = playersIterator.next();
+				currentTurn.setCurrentPlayer(currentPlayer);
+
+				do
+				{
 					currentTurn.roll();
-				} while (!currentTurn.isDone());	
-				
-				
-				currentTurn.tellResult();			
+				} while (!currentTurn.isDone());
+
+				currentTurn.tellResult();
 			}
 		}
 
-		
 		System.out.println("All turns have been played.");
 
 		PlayerIterator playersIterator = playerCollection.createIterator();
-		while(playersIterator.hasNext()) {
+		while (playersIterator.hasNext())
+		{
 			Player player = playersIterator.next();
-			System.out.println(player.getName() + " got " +player.getScore()+ " points");
+			System.out.println(player.getName() + " got " + player.getScore()
+					+ " points");
 		}
-		
+
 		Player winner = calculateWinner();
-		if(winner != null) {
+		if (winner != null)
+		{
 			System.out.println("The game has been won by " + winner.getName());
-		}
-		else {
+		} else
+		{
 			System.out.println("The game is a draw !");
 		}
-	}
-
-	/**
-	 * Call subclass to find the total score for this turn.
-	 * 
-	 * @author:
-	 * @param leDepuisFile
-	 * 
-	 * @return le score
-	 */
-	public void askNumberOfPlayer()
-	{
-		//
 	}
 }
