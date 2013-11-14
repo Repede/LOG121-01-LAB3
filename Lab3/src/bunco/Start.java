@@ -25,6 +25,7 @@ public class Start
 		newGame.play();
 
 		// System.out.println("Do you want to play again ?");
+	
 	}
 
 }

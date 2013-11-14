@@ -86,6 +86,29 @@ public class Game implements IStrategyGame
 	 * @author: Hugo Desjardins-Libero, Andre-Philippe Boulet
 	 * 
 	 */
+	
+	/**
+	 * Call class to display the score and the winner of the game.
+	 * 
+	 * @author: Maude
+	 */
+	public void displayScore() {
+		
+		PlayerIterator playersIterator = playerCollection.createIterator();
+		while(playersIterator.hasNext()) {
+			Player player = playersIterator.next();
+			System.out.println(player.getName() + " got " +player.getScore()+ " points");
+		}
+		
+		Player winner = calculateWinner();
+		if(winner != null) {
+			System.out.println("The game has been won by " + winner.getName());
+		}
+		else {
+			System.out.println("The game is a draw!");
+		}
+	}
+
 	public void initialize()
 	{
 
@@ -146,5 +169,19 @@ public class Game implements IStrategyGame
 		{
 			System.out.println("The game is a draw !");
 		}
+		displayScore();
+	}
+
+	/**
+	 * Call subclass to find the total score for this turn.
+	 * 
+	 * @author:
+	 * @param leDepuisFile
+	 * 
+	 * @return le score
+	 */
+	public void askNumberOfPlayer()
+	{
+		//
 	}
 }
