@@ -7,7 +7,7 @@ public class GameTest
 {
 	public void test_calculateWinner()
 	{
-		Game testGame = new Game(1,1);
+		//Game testGame = new Game(1,1);
 		fail("Not yet implemented");
 	}
 

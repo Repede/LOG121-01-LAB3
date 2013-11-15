@@ -15,7 +15,7 @@ public class GameFactory
 
 		int numberOfPlayer = 0;
 
-		Game newGame = new Game(6, 3);
+		Game newGame = new Game();
 
 		// Ask and create the players
 		System.out.print("Please enter a number of player : ");
