@@ -10,7 +10,7 @@ Filename: PlayerCollection.java
 package frameworkDice;
 
 import java.util.ArrayList;
-import java.util.Collections;
+//import java.util.Collections;
 
 public class PlayerCollection
 {
@@ -20,9 +20,8 @@ public class PlayerCollection
 	/**
 	 * Add a player to our collection
 	 * 
-	 * @author: Andre-Philippe Boulet, Hugo Desjardins-Libero
-	 * @param newPlayer
-	 *            Player to add to our collection
+	 * @author	Andre-Philippe Boulet, Hugo Desjardins-Libero
+	 * @param 	newPlayer	Player to add to our collection
 	 */
 	public void addPlayer(Player newPlayer)
 	{
@@ -32,8 +31,8 @@ public class PlayerCollection
 	/**
 	 * Create an object to iterate this playerCollection
 	 * 
-	 * @author: Andre-Philippe Boulet, Hugo Desjardins-Libero
-	 * @return An object PlayerIterator to iterate our collection
+	 * @author 	Hugo Desjardins-Libero
+	 * @return 	An object PlayerIterator to iterate our collection
 	 */
 	public PlayerIterator createIterator()
 	{

@@ -19,9 +19,8 @@ public class TurnCollection
 	/**
 	 * Add a turn to our collection
 	 * 
-	 * @author: Andre-Philippe Boulet
-	 * @param newTurn
-	 *            is a new turn to add to this collection
+	 * @author	Andre-Philippe Boulet
+	 * @param 	newTurn	is a new turn to add to this collection
 	 */
 	public void addTurn(Turn newTurn)
 	{
@@ -31,8 +30,8 @@ public class TurnCollection
 	/**
 	 * Create an object to iterate this diceCollection
 	 * 
-	 * @author: Andre-Philippe Boulet
-	 * @return An object TurnIterator to iterate our collection
+	 * @author	Andre-Philippe Boulet
+	 * @return 	An object TurnIterator to iterate our collection
 	 */
 	public TurnIterator createIterator()
 	{
@@ -42,8 +41,8 @@ public class TurnCollection
 	/**
 	 * Gets the collection's size
 	 * 
-	 * @author: Andre-Philippe Boulet
-	 * @return The size of the collection
+	 * @author	Andre-Philippe Boulet
+	 * @return 	The size of the collection
 	 */
 	public int getSize()
 	{

@@ -30,10 +30,9 @@ public class Player implements Comparable<Player>
 	/**
 	 * Between 2 players, find whom has the higher score
 	 * 
-	 * @author: Andre-Philippe Boulet, Hugo Desjardins-Libero
-	 * @param otherPlayer
-	 *            The player whom we which to compareTo
-	 * @return Which Player has higher score
+	 * @author: Hugo Desjardins-Libero
+	 * @param 	otherPlayer	The player whom we which to compareTo
+	 * @return 	Which Player has higher score
 	 */
 	public int compareTo(Player otherPlayer)
 	{
@@ -43,19 +42,18 @@ public class Player implements Comparable<Player>
 	/**
 	 * Adds points to the player
 	 * 
-	 * @author: Andre-Philippe Boulet, Hugo Desjardins-Libero
-	 * @param score
-	 *            how many points to give (negative value to remove)
+	 * @author: 	Andre-Philippe Boulet
+	 * @param score	how many points to give (negative value to remove)
 	 */
 	public void addScore(int score)
 	{
 		this.score += score;
 	}
+	
 	/**
 	 * Gets the player's score
 	 * 
-	 * @author: Andre-Philippe Boulet, Hugo Desjardins-Libero
-	 * 
+	 * @author: Hugo Desjardins-Libero
 	 * @return The player's score
 	 */
 	public int getScore()

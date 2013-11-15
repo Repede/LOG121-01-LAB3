@@ -13,27 +13,45 @@ public interface IStrategyGame
 {
 
 	/**
-	 * Call subclass to find the total score for this turn.
-	 * 
-	 * @author:
-	 * @param leDepuisFile
-	 * @return A score integer
-	 */
-	abstract public int calculateTurnScore();
-
-	/**
 	 * Call subclass to find the winner of the game.
 	 * 
-	 * @author:
-	 * @param leDepuisFile
-	 * @return The player who won
+	 * @author	Andre-Philippe Boulet
+	 * @return 	The Player who won the game
 	 */
 	abstract public Player calculateWinner();
 	
 	/**
 	 * Call class to display the score and the winner of the game.
 	 * 
-	 * @author: Maude
+	 * @author: Maude Payette
 	 */
 	abstract public void displayScore();
+	
+	/**
+	 * Call class to display the score and the winner of the game.
+	 * 
+	 * @author: Maude Payette
+	 */
+	abstract public void initialize();
+	
+	/**
+	 * Call class to display the score and the winner of the game.
+	 * 
+	 * @author: Maude Payette
+	 */
+	abstract public void initializePlayers();
+	
+	/**
+	 * Call class to display the score and the winner of the game.
+	 * 
+	 * @author: Maude Payette
+	 */
+	abstract public void initializeDices();
+	
+	/**
+	 * Call class to display the score and the winner of the game.
+	 * 
+	 * @author: Maude Payette
+	 */
+	abstract public void initializeTurns();
 }

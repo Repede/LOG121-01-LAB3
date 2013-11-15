@@ -26,7 +26,7 @@ public class PlayerIterator implements Iterator<Player>
 	@Override
 	/**
 	 * Is there a next player in the loop
-	 * @author: Andre-Philippe Boulet, Hugo Desjardins-Libero
+	 * @author: Hugo Desjardins-Libero
 	 * @return 	boolean
 	 */
 	public boolean hasNext()
@@ -37,7 +37,8 @@ public class PlayerIterator implements Iterator<Player>
 	@Override
 	/**
 	 * Get the next player in the list
-	 * @author: Andre-Philippe Boulet, Hugo Desjardins-Libero
+	 * @author 	Hugo Desjardins-Libero
+	 * @edited	Andre-Philippe Boulet
 	 * @return 	A player
 	 */
 	public Player next()
@@ -52,7 +53,7 @@ public class PlayerIterator implements Iterator<Player>
 	@Override
 	/**
 	 * Remove the current player
-	 * @author: Andre-Philippe Boulet, Hugo Desjardins-Libero
+	 * @author: Hugo Desjardins-Libero
 	 */
 	public void remove()
 	{

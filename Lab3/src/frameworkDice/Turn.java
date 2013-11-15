@@ -10,7 +10,7 @@ Filename: Turn.java
 
 package frameworkDice;
 
-public class Turn
+public class Turn implements IStrategyTurn
 {
 	protected Player currentPlayer;
 	protected DiceCollection diceCollection;
@@ -46,7 +46,7 @@ public class Turn
 
 	/**
 	 * Calculates the score for the turn
-	 * @author: Andre-Philippe Boulet, Hugo Desjardins-Libero, Maude Payette
+	 * @author: Andre-Philippe Boulet, Maude Payette
 	 * @return 	integer
 	 */
 	public int calculateScore()
@@ -66,7 +66,7 @@ public class Turn
 
 	/**
 	 * Sets the current player
-	 * @author: Andre-Philippe Boulet, Hugo Desjardins-Libero, Maude Payette
+	 * @author: Andre-Philippe Boulet, Maude Payette
 	 * @return 	boolean
 	 */
 	public void setCurrentPlayer(Player player)
@@ -78,9 +78,8 @@ public class Turn
 	/**
 	 * Set the current turn number
 	 * 
-	 * @author:  Andre-Philippe Boulet
-	 * @param number
-	 *            The current turn number *
+	 * @author	Andre-Philippe Boulet
+	 * @param 	number	The current turn number
 	 */
 	public void setTurnNumber(int number)
 	{
@@ -94,7 +93,7 @@ public class Turn
 	 */
 	public void tellResult()
 	{
-		System.out.println("On turn " + turnNumber + ", "
-				+ currentPlayer.getName() + " got a score of " + turnScore);
+		System.out.println("On turn " + turnNumber + ", " + currentPlayer.getName() + " got a score of " + turnScore);
 	}
+
 }

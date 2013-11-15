@@ -25,7 +25,7 @@ public class TurnIterator implements Iterator<Turn>
 	@Override
 	/**
 	 * Is there a next turn in the loop
-	 * @author: Andre-Philippe Boulet
+	 * @author	Andre-Philippe Boulet
 	 * @return 	boolean
 	 */
 	public boolean hasNext()
@@ -36,7 +36,7 @@ public class TurnIterator implements Iterator<Turn>
 	@Override
 	/**
 	 * Get the next turn in the list
-	 * @author: Andre-Philippe Boulet
+	 * @author	Andre-Philippe Boulet
 	 * @return 	A turn
 	 */
 	public Turn next()
@@ -51,7 +51,7 @@ public class TurnIterator implements Iterator<Turn>
 	@Override
 	/**
 	 * Remove the current turn
-	 * @author: Andre-Philippe Boulet
+	 * @author	Andre-Philippe Boulet
 	 */
 	public void remove()
 	{

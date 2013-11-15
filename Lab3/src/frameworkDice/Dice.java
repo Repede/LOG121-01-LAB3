@@ -29,10 +29,9 @@ public class Dice implements Comparable<Dice>
 	/**
 	 * Between 2 dices, find whom has the higher value
 	 * 
-	 * @author: Hugo Desjardins Delibero, Andre-Philippe Boulet
-	 * @param otherDice
-	 *            The dice whom we which to compareTo
-	 * @return Which Dice has higher score
+	 * @author 	Hugo Desjardins Delibero
+	 * @param 	otherDice	The dice whom we which to compareTo
+	 * @return 	Which Dice has higher score
 	 */
 	public int compareTo(Dice otherDice)
 	{
@@ -43,7 +42,7 @@ public class Dice implements Comparable<Dice>
 	/**
 	 * Add a player to our collection
 	 * 
-	 * @author:Hugo Desjardins Delibero, Andre-Philippe Boulet
+	 * @author:Hugo Desjardins Delibero
 	 * @return The result of the roll
 	 */
 	public int roll()
@@ -56,7 +55,7 @@ public class Dice implements Comparable<Dice>
 	/**
 	 * Gets the dice's face result
 	 * 
-	 * @author:Hugo Desjardins Delibero, Andre-Philippe Boulet
+	 * @author:Hugo Desjardins Delibero
 	 * @return The face number
 	 */
 	public int getResult()
@@ -67,7 +66,7 @@ public class Dice implements Comparable<Dice>
 	/**
 	 * Create an object to iterate this diceCollection
 	 * 
-	 * @author:
+	 * @author: Andre-Philippe Boulet
 	 * @return The face of the dice associated with the rollResult
 	 */
 	private int getFace(int rollResult)

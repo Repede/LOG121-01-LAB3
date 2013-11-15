@@ -26,7 +26,7 @@ public class DiceIterator implements Iterator<Dice>
 	@Override
 	/**
 	 * Is there a next dice in the loop
-	 * @author: Hugo Desjardins-Libero, Andre-Philippe Boulet
+	 * @author: Hugo Desjardins-Libero
 	 * @return 	A score integer
 	 */
 	public boolean hasNext()
@@ -37,7 +37,8 @@ public class DiceIterator implements Iterator<Dice>
 	@Override
 	/**
 	 * Get the next dice in the list
-	 * @author: Hugo Desjardins-Libero, Andre-Philippe Boulet
+	 * @author	Hugo Desjardins-Libero
+	 * @edited	Andre-Philippe Boulet
 	 * @return 	A dice
 	 */
 	public Dice next()
@@ -52,7 +53,7 @@ public class DiceIterator implements Iterator<Dice>
 	@Override
 	/**
 	 * Remove the current dice
-	 * @author: Hugo Desjardins-Libero, Andre-Philippe Boulet
+	 * @author: Hugo Desjardins-Libero
 	 */
 	public void remove()
 	{

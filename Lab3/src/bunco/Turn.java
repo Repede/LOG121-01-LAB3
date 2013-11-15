@@ -14,6 +14,7 @@ public class Turn extends frameworkDice.Turn
 		// TODO Auto-generated constructor stub
 	}
 
+	
 	public int calculateScore()
 	{
 
@@ -24,8 +25,7 @@ public class Turn extends frameworkDice.Turn
 		Dice dice2 = diceIterator.next();
 		Dice dice3 = diceIterator.next();
 
-		if (dice1.getResult() == dice2.getResult()
-				&& dice1.getResult() == dice3.getResult())
+		if (dice1.getResult() == dice2.getResult() && dice1.getResult() == dice3.getResult())
 		{
 			if (dice1.getResult() == turnNumber)
 			{

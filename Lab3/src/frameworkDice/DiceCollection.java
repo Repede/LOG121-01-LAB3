@@ -20,9 +20,8 @@ public class DiceCollection
 	/**
 	 * Add a player to the collection
 	 * 
-	 * @author: Hugo Desjardins Delibero, Andre-Philippe Boulet
-	 * @param newDice
-	 *            is a new Dice to add to this collection
+	 * @author: Hugo Desjardins Delibero
+	 * @param 	newDice	is a new Dice to add to this collection
 	 */
 	public void addDice(Dice newDice)
 	{
@@ -32,7 +31,7 @@ public class DiceCollection
 	/**
 	 * Create an object to iterate this diceCollection
 	 * 
-	 * @author: Hugo Desjardins Delibero, Andre-Philippe Boulet
+	 * @author: Hugo Desjardins Delibero
 	 * @return An object DiceIterator to iterate our collection
 	 */
 	public DiceIterator createIterator()

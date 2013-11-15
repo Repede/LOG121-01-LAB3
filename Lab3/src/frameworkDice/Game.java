@@ -10,6 +10,9 @@ Filename: Game.java
 
 package frameworkDice;
 
+import java.util.Scanner;
+
+
 public class Game implements IStrategyGame
 {
 	protected int numberOfTurn;
@@ -17,51 +20,81 @@ public class Game implements IStrategyGame
 	protected DiceCollection diceCollection;
 	protected PlayerCollection playerCollection;
 
-	/**
-	 * Constructor for Game
-	 * 
-	 * @author: Hugo Desjardins-Libero, Andre-Philippe Boulet
-	 * 
-	 * @param int numOfTurn: The number of turn the game should have. int numOfDice: The number of dices to use
-	 */
-	public Game(int numOfTurn, int numOfDice)
+	public Game()
 	{
 		turnCollection = new TurnCollection();
 		diceCollection = new DiceCollection();
 		playerCollection = new PlayerCollection();
-
-		for (int i = 0; i < numOfTurn; i++)
-		{
-			this.addTurn();
-		}
-
-		for (int i = 0; i < numOfDice; i++)
-		{
-			this.addDice(6);
-		}
 	}
-
-	public void addDice(int numberOfFaces)
-	{
-
-	}
-
-	public void addTurn()
-	{
-
-	}
-
+	
 	/**
-	 * Call subclass to find the total score for this turn.
+	 * Initializes the game
 	 * 
-	 * @author: Hugo Desjardins-Libero, Andre-Philippe Boulet
+	 * @author: Andre-Philippe Boulet
 	 * 
-	 * @return A score integer
 	 */
-	public int calculateTurnScore()
-	{
-		return 0;
+	public void initialize() {
+		initializePlayers();
+		initializeDices();
+		initializeTurns();
 	}
+	
+	/**
+	 * Initializes the game
+	 * 
+	 * @author: Andre-Philippe Boulet
+	 * 
+	 */
+	public void initializePlayers() {
+		
+		// Get number of player and add them to the collection
+		System.out.print("Please enter a number of player : ");
+		Scanner s = new Scanner(System.in);		
+		int numberOfPlayer = s.nextInt();
+		
+		
+		for (int i = 0; i < numberOfPlayer; i++)
+		{
+			System.out.print("Please player " + (i + 1) + " name : ");
+			s = new Scanner(System.in);
+
+			Player newPlayer = new Player(s.next());
+			playerCollection.addPlayer(newPlayer);
+		}
+		if (s != null) s.close();
+	}
+	
+	/**
+	 * Initializes the game
+	 * 
+	 * @author: Andre-Philippe Boulet
+	 * 
+	 */
+	public void initializeDices() {}
+	
+	/**
+	 * Initializes the turns
+	 * 
+	 * @author: Andre-Philippe Boulet
+	 * 
+	 */
+	public void initializeTurns() {}
+	
+	
+	
+	
+	/**
+	 * Initializes the game from an existing game
+	 * 
+	 * @author: Andre-Philippe Boulet
+	 * 
+	 */
+	public void initialize(Game fromGame) {
+		this.turnCollection = fromGame.turnCollection;
+		this.diceCollection = fromGame.diceCollection;
+		this.playerCollection = fromGame.playerCollection;
+	}
+	
 
 	/**
 	 * Call subclass to find the total score for this turn.
@@ -86,13 +119,45 @@ public class Game implements IStrategyGame
 			}
 		}
 		return winner;
-	}
+	}	
+
+	
+	
 	/**
-	 * Initializes the game
+	 * Plays the game
 	 * 
 	 * @author: Hugo Desjardins-Libero, Andre-Philippe Boulet
 	 * 
 	 */
+	public void play()
+	{
+
+		TurnIterator turnsIterator = turnCollection.createIterator();
+		int turnNumber = 0;
+		while (turnsIterator.hasNext())
+		{
+			Turn currentTurn = turnsIterator.next();
+			currentTurn.setTurnNumber(++turnNumber);
+
+			PlayerIterator playersIterator = playerCollection.createIterator();
+			while (playersIterator.hasNext())
+			{
+
+				Player currentPlayer = playersIterator.next();
+				currentTurn.setCurrentPlayer(currentPlayer);
+
+				do
+				{
+					currentTurn.roll();
+				} while (!currentTurn.isDone());
+
+				currentTurn.tellResult();
+			}
+		}
+
+		System.out.println("All turns have been played.");		
+		displayScore();
+	}
 	
 	/**
 	 * Call class to display the score and the winner of the game.
@@ -114,81 +179,5 @@ public class Game implements IStrategyGame
 		else {
 			System.out.println("The game is a draw!");
 		}
-	}
-
-	public void initialize()
-	{
-
-		// GetDices : DiceCollection
-
-		// GetNumberOfTurn
-
-		// AskPlayerInformation
-	}
-	/**
-	 * Plays the game
-	 * 
-	 * @author: Hugo Desjardins-Libero, Andre-Philippe Boulet
-	 * 
-	 */
-	public void play()
-	{
-
-		TurnIterator turnsIterator = turnCollection.createIterator();
-		int turnNumber = 0;
-		while (turnsIterator.hasNext())
-		{
-
-			Turn currentTurn = turnsIterator.next();
-			currentTurn.setTurnNumber(++turnNumber);
-
-			PlayerIterator playersIterator = playerCollection.createIterator();
-			while (playersIterator.hasNext())
-			{
-
-				Player currentPlayer = playersIterator.next();
-				currentTurn.setCurrentPlayer(currentPlayer);
-
-				do
-				{
-					currentTurn.roll();
-				} while (!currentTurn.isDone());
-
-				currentTurn.tellResult();
-			}
-		}
-
-		System.out.println("All turns have been played.");
-
-		PlayerIterator playersIterator = playerCollection.createIterator();
-		while (playersIterator.hasNext())
-		{
-			Player player = playersIterator.next();
-			System.out.println(player.getName() + " got " + player.getScore()
-					+ " points");
-		}
-
-		Player winner = calculateWinner();
-		if (winner != null)
-		{
-			System.out.println("The game has been won by " + winner.getName());
-		} else
-		{
-			System.out.println("The game is a draw !");
-		}
-		displayScore();
-	}
-
-	/**
-	 * Call subclass to find the total score for this turn.
-	 * 
-	 * @author:
-	 * @param leDepuisFile
-	 * 
-	 * @return le score
-	 */
-	public void askNumberOfPlayer()
-	{
-		//
 	}
 }
