@@ -7,17 +7,17 @@ Filename: TurnIterator.java
 @created	2013-11-10 Initial version
  *******************************************************/
 
-package frameworkDice;
+package frameworkdice;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class TurnIterator implements Iterator<Turn>
+public class TurnIterator implements Iterator<GameTurn>
 {
-	private ArrayList<Turn> turns;
+	private ArrayList<GameTurn> turns;
 	private int position = 0;
 
-	public TurnIterator(ArrayList<Turn> turns)
+	public TurnIterator(ArrayList<GameTurn> turns)
 	{
 		this.turns = turns;
 	}
@@ -39,7 +39,7 @@ public class TurnIterator implements Iterator<Turn>
 	 * @author	Andre-Philippe Boulet
 	 * @return 	A turn
 	 */
-	public Turn next()
+	public GameTurn next()
 	{
 		if (hasNext())
 		{

@@ -8,9 +8,9 @@ Filename: Turn.java
 @updated	2013-11-10
  *******************************************************/
 
-package frameworkDice;
+package frameworkdice;
 
-public class Turn implements IStrategyTurn
+public class GameTurn implements IStrategyTurn
 {
 	protected Player currentPlayer;
 	protected DiceCollection diceCollection;
@@ -18,7 +18,7 @@ public class Turn implements IStrategyTurn
 	protected int turnScore;
 	protected int turnNumber;
 
-	public Turn(DiceCollection diceCollection)
+	public GameTurn(DiceCollection diceCollection)
 	{
 		this.diceCollection = diceCollection;
 		this.rollScore = 0;

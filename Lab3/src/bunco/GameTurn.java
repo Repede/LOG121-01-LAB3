@@ -12,10 +12,10 @@ package bunco;
 
 import java.util.Iterator;
 
-import frameworkDice.Dice;
-import frameworkDice.DiceCollection;
+import frameworkdice.DiceItem;
+import frameworkdice.DiceCollection;
 
-public class Turn extends frameworkDice.Turn
+public class GameTurn extends frameworkdice.GameTurn
 {
 	/**
 	 * Constructor of turn
@@ -24,7 +24,7 @@ public class Turn extends frameworkDice.Turn
 	 * @param	diceCollection	The collection of dices assigned to this turn
 	 * 
 	 */
-	public Turn(DiceCollection diceCollection)
+	public GameTurn(DiceCollection diceCollection)
 	{
 		super(diceCollection);
 		// TODO Auto-generated constructor stub
@@ -42,10 +42,10 @@ public class Turn extends frameworkDice.Turn
 
 		int score = 0;
 
-		Iterator<Dice> diceIterator = diceCollection.createIterator();
-		Dice dice1 = diceIterator.next();
-		Dice dice2 = diceIterator.next();
-		Dice dice3 = diceIterator.next();
+		Iterator<DiceItem> diceIterator = diceCollection.createIterator();
+		DiceItem dice1 = diceIterator.next();
+		DiceItem dice2 = diceIterator.next();
+		DiceItem dice3 = diceIterator.next();
 
 		if (dice1.getResult() == dice2.getResult() && dice1.getResult() == dice3.getResult())
 		{
@@ -62,7 +62,7 @@ public class Turn extends frameworkDice.Turn
 			diceIterator = diceCollection.createIterator();
 			while (diceIterator.hasNext())
 			{
-				Dice dice = diceIterator.next();
+				DiceItem dice = diceIterator.next();
 				if (dice.getResult() == turnNumber)
 				{
 					score++;

@@ -8,14 +8,14 @@ Filename: DiceCollection.java
 @updated	2013-11-12
  *******************************************************/
 
-package frameworkDice;
+package frameworkdice;
 
 import java.util.ArrayList;
 
 public class DiceCollection
 {
 
-	private ArrayList<Dice> listDices = new ArrayList<Dice>();
+	private ArrayList<DiceItem> listDices = new ArrayList<DiceItem>();
 
 	/**
 	 * Add a player to the collection
@@ -23,7 +23,7 @@ public class DiceCollection
 	 * @author: Hugo Desjardins Delibero
 	 * @param 	newDice	is a new Dice to add to this collection
 	 */
-	public void addDice(Dice newDice)
+	public void addDice(DiceItem newDice)
 	{
 		listDices.add(newDice);
 	}

@@ -8,7 +8,7 @@ Filename: Player.java
 @updated	2013-11-10
  *******************************************************/
 
-package frameworkDice;
+package frameworkdice;
 
 public class Player implements Comparable<Player>
 {

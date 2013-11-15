@@ -8,21 +8,21 @@ Filename: GameTest.java
 @updated	2013-11-14
  *******************************************************/
 
-package testFrameworkDice;
+package testframeworkdice;
 
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import bunco.Game;
-import frameworkDice.Player;
+import bunco.BuncoGame;
+import frameworkdice.Player;
 
 public class GameTest
 {
 	@Test
 	public void test_calculateWinner()
 	{
-		Game newGame = new Game();
+		BuncoGame newGame = new BuncoGame();
 		
 		Player player1 = new Player("Winner");
 		Player player2 = new Player("Loser1");

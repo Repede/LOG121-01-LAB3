@@ -7,7 +7,7 @@ Filename: IStrategyTurn.java
 @created	2013-11-01 Initial version
  *******************************************************/
 
-package frameworkDice;
+package frameworkdice;
 
 public interface IStrategyTurn
 {

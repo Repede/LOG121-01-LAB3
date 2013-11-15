@@ -1,10 +1,10 @@
-package testFrameworkDice;
+package testframeworkdice;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import frameworkDice.Dice;
+import frameworkdice.DiceItem;
 
 public class DiceTest
 {
@@ -20,7 +20,7 @@ public class DiceTest
 	{
 		for (int i = 0; i < 1000; ++i)
 		{
-			Dice testDice = new Dice();
+			DiceItem testDice = new DiceItem();
 			int test = testDice.roll();
 			assertTrue(test <= 6 && test >= 1);
 		}
@@ -32,8 +32,8 @@ public class DiceTest
 	{
 		for(int i = 0 ; i < 100 ; ++i)
 		{
-			Dice testDice = new Dice();
-			Dice otherDice = new Dice();
+			DiceItem testDice = new DiceItem();
+			DiceItem otherDice = new DiceItem();
 			while(otherDice.getResult() != 6)
 			{
 				otherDice.roll();

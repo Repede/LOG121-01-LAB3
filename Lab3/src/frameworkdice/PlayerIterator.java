@@ -1,63 +1,63 @@
 /******************************************************
 Course:  LOG121
 Project: Laboratoire 3
-Filename: DiceIterator.java
+Filename: PlayerIterator.java
 
 @author 	Andre-Philippe Boulet, Maude Payette, Hugo Desjardins-Libero
 @created	2013-11-01 Initial version
-@updated 2013-11-10
+@updated	2013-11-10
  *******************************************************/
 
-package frameworkDice;
+package frameworkdice;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class DiceIterator implements Iterator<Dice>
+public class PlayerIterator implements Iterator<Player>
 {
-	private ArrayList<Dice> dices;
-	int position = 0;
+	private ArrayList<Player> players;
+	private int position = 0;
 
-	public DiceIterator(ArrayList<Dice> dices)
+	public PlayerIterator(ArrayList<Player> players)
 	{
-		this.dices = dices;
+		this.players = players;
 	}
 
 	@Override
 	/**
-	 * Is there a next dice in the loop
+	 * Is there a next player in the loop
 	 * @author: Hugo Desjardins-Libero
-	 * @return 	A score integer
+	 * @return 	boolean
 	 */
 	public boolean hasNext()
 	{
-		return position < dices.size();
+		return position < players.size();
 	}
 
 	@Override
 	/**
-	 * Get the next dice in the list
-	 * @author	Hugo Desjardins-Libero
+	 * Get the next player in the list
+	 * @author 	Hugo Desjardins-Libero
 	 * @edited	Andre-Philippe Boulet
-	 * @return 	A dice
+	 * @return 	A player
 	 */
-	public Dice next()
+	public Player next()
 	{
 		if (hasNext())
 		{
-			return dices.get(position++);
+			return players.get(position++);
 		}
 		return null;
 	}
 
 	@Override
 	/**
-	 * Remove the current dice
+	 * Remove the current player
 	 * @author: Hugo Desjardins-Libero
 	 */
 	public void remove()
 	{
-		dices.remove(position);
+		players.remove(position);
 	}
 
 }

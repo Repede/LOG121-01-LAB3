@@ -20,7 +20,7 @@ public class Start
 	 */
 	public static void main(String[] args)
 	{
-		Game newGame = new Game();
+		BuncoGame newGame = new BuncoGame();
 		newGame.initialize();
 		startGame(newGame);				
 	}
@@ -32,7 +32,7 @@ public class Start
 	 * @param	game	The game to play
 	 * 
 	 */
-	static public void startGame(Game game)
+	static public void startGame(BuncoGame game)
 	{		
 		System.out.println("A new game is starting !");
 		game.play();		

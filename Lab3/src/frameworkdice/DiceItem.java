@@ -8,20 +8,20 @@ Filename: Dice.java
 @updated	2013-11-11
  *******************************************************/
 
-package frameworkDice;
+package frameworkdice;
 
-public class Dice implements Comparable<Dice>
+public class DiceItem implements Comparable<DiceItem>
 {
 
 	private int numberOfFaces;
 	private int currentFaceNumber;
 
-	public Dice()
+	public DiceItem()
 	{
 		numberOfFaces = 6;
 	}
 
-	public Dice(int numOffaces)
+	public DiceItem(int numOffaces)
 	{
 		numberOfFaces = numOffaces;
 	}
@@ -33,7 +33,7 @@ public class Dice implements Comparable<Dice>
 	 * @param 	otherDice	The dice whom we which to compareTo
 	 * @return 	Which Dice has higher score
 	 */
-	public int compareTo(Dice otherDice)
+	public int compareTo(DiceItem otherDice)
 	{
 		return Integer.compare(this.currentFaceNumber,
 				otherDice.currentFaceNumber);

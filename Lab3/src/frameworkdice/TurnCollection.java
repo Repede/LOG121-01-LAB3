@@ -7,14 +7,14 @@ Filename: TurnCollection.java
 @created	2013-11-10 Initial version
  *******************************************************/
 
-package frameworkDice;
+package frameworkdice;
 
 import java.util.ArrayList;
 
 public class TurnCollection
 {
 
-	private ArrayList<Turn> listTurns = new ArrayList<Turn>();
+	private ArrayList<GameTurn> listTurns = new ArrayList<GameTurn>();
 
 	/**
 	 * Add a turn to our collection
@@ -22,7 +22,7 @@ public class TurnCollection
 	 * @author	Andre-Philippe Boulet
 	 * @param 	newTurn	is a new turn to add to this collection
 	 */
-	public void addTurn(Turn newTurn)
+	public void addTurn(GameTurn newTurn)
 	{
 		listTurns.add(newTurn);
 	}

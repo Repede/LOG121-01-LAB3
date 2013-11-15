@@ -8,10 +8,10 @@ Filename: TurnTest.java
 @updated	2013-11-14
  *******************************************************/
 
-package testFrameworkDice;
-import frameworkDice.Dice;
-import bunco.Turn;
-import frameworkDice.DiceCollection;
+package testframeworkdice;
+import bunco.GameTurn;
+import frameworkdice.DiceItem;
+import frameworkdice.DiceCollection;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
@@ -26,9 +26,9 @@ public class TurnTest
 	@Test
 	public void test_calculateScore()
 	{
-		Dice dice1 = new Dice();
-		Dice dice2 = new Dice();
-		Dice dice3 = new Dice();
+		DiceItem dice1 = new DiceItem();
+		DiceItem dice2 = new DiceItem();
+		DiceItem dice3 = new DiceItem();
 		
 		// Cas 1 : Score quand les 3 dés = 2 et le numéro de tour = 2
 		dice1.setResult(2);
@@ -41,7 +41,7 @@ public class TurnTest
 		collection1.addDice(dice2);
 		collection1.addDice(dice3);
 		
-		Turn turn = new Turn(collection1);
+		GameTurn turn = new GameTurn(collection1);
 		turn.setTurnNumber(2);
 		
 		int score = turn.calculateScore();
@@ -63,7 +63,7 @@ public class TurnTest
 		collection2.addDice(dice2);
 		collection2.addDice(dice3);
 		
-		turn = new Turn(collection2);
+		turn = new GameTurn(collection2);
 		turn.setTurnNumber(2);
 		
 		score = turn.calculateScore();
@@ -84,7 +84,7 @@ public class TurnTest
 		collection3.addDice(dice2);
 		collection3.addDice(dice3);
 		
-		turn = new Turn(collection3);
+		turn = new GameTurn(collection3);
 		turn.setTurnNumber(3);
 		
 		score = turn.calculateScore();
@@ -106,7 +106,7 @@ public class TurnTest
 		collection4.addDice(dice2);
 		collection4.addDice(dice3);
 		
-		turn = new Turn(collection4);
+		turn = new GameTurn(collection4);
 		turn.setTurnNumber(6);
 		
 		score = turn.calculateScore();
@@ -129,7 +129,7 @@ public class TurnTest
 		collection5.addDice(dice2);
 		collection5.addDice(dice3);
 		
-		turn = new Turn(collection5);
+		turn = new GameTurn(collection5);
 		turn.setTurnNumber(5);
 		
 		score = turn.calculateScore();

@@ -7,7 +7,7 @@ Filename: PlayerCollection.java
 @created	2013-11-01 Initial version
  *******************************************************/
 
-package frameworkDice;
+package frameworkdice;
 
 import java.util.ArrayList;
 //import java.util.Collections;

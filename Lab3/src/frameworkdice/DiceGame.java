@@ -8,19 +8,19 @@ Filename: Game.java
 @updated	2013-11-12
  *******************************************************/
 
-package frameworkDice;
+package frameworkdice;
 
 import java.util.Scanner;
 
 
-public class Game implements IStrategyGame
+public class DiceGame implements IStrategyGame
 {
 	protected int numberOfTurn;
 	protected TurnCollection turnCollection;
 	protected DiceCollection diceCollection;
 	protected PlayerCollection playerCollection;
 
-	public Game()
+	public DiceGame()
 	{
 		turnCollection = new TurnCollection();
 		diceCollection = new DiceCollection();
@@ -49,19 +49,19 @@ public class Game implements IStrategyGame
 		
 		// Get number of player and add them to the collection
 		System.out.print("Please enter a number of player : ");
-		Scanner s = new Scanner(System.in);		
-		int numberOfPlayer = s.nextInt();
+		Scanner scan = new Scanner(System.in);		
+		int numberOfPlayer = scan.nextInt();
 		
 		
 		for (int i = 0; i < numberOfPlayer; i++)
 		{
 			System.out.print("Please player " + (i + 1) + " name : ");
-			s = new Scanner(System.in);
+			scan = new Scanner(System.in);
 
-			Player newPlayer = new Player(s.next());
+			Player newPlayer = new Player(scan.next());
 			playerCollection.addPlayer(newPlayer);
 		}
-		if (s != null) s.close();
+		if (scan != null) scan.close();
 	}
 	
 	/**
@@ -100,7 +100,7 @@ public class Game implements IStrategyGame
 	 * @author: Andre-Philippe Boulet
 	 * 
 	 */
-	public void initialize(Game fromGame) {
+	public void initialize(DiceGame fromGame) {
 		this.turnCollection = fromGame.turnCollection;
 		this.diceCollection = fromGame.diceCollection;
 		this.playerCollection = fromGame.playerCollection;
@@ -147,7 +147,7 @@ public class Game implements IStrategyGame
 		int turnNumber = 0;
 		while (turnsIterator.hasNext())
 		{
-			Turn currentTurn = turnsIterator.next();
+			GameTurn currentTurn = turnsIterator.next();
 			currentTurn.setTurnNumber(++turnNumber);
 
 			PlayerIterator playersIterator = playerCollection.createIterator();

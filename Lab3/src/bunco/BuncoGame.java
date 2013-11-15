@@ -10,9 +10,9 @@ Filename: Dice.java
 
 package bunco;
 
-import frameworkDice.Dice;
+import frameworkdice.DiceItem;
 
-public class Game extends frameworkDice.Game
+public class BuncoGame extends frameworkdice.DiceGame
 {		
 	private int numberOfTurn = 6;
 	private int numberOfDices = 3;
@@ -28,7 +28,7 @@ public class Game extends frameworkDice.Game
 	public void initializeDices() {
 		// Create dices collection
 		for(int i=0; i<numberOfDices;i++) {
-			Dice newDice = new Dice(numberOfDiceFaces);
+			DiceItem newDice = new DiceItem(numberOfDiceFaces);
 			diceCollection.addDice(newDice);
 		}	
 	}
@@ -43,7 +43,7 @@ public class Game extends frameworkDice.Game
 		
 		// Create turns collection
 		for(int i=0; i<numberOfTurn;i++) {
-			Turn newTurn = new Turn(this.diceCollection);
+			GameTurn newTurn = new GameTurn(this.diceCollection);
 			turnCollection.addTurn(newTurn);
 		}
 	}
