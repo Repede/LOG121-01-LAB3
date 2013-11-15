@@ -73,5 +73,10 @@ public class Dice implements Comparable<Dice>
 	{
 		return rollResult;
 	}
+	
+	public void setResult(int result)
+	{
+		this.currentFaceNumber = result;
+	}
 
 }
