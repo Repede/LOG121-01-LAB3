@@ -84,6 +84,7 @@ public class GameTurn extends frameworkdice.GameTurn
 	{
 		return rollScore == 0 || rollScore == 21;
 	}
+	
 
 	/**
 	 * Verbose mode to tell what happened this turn.

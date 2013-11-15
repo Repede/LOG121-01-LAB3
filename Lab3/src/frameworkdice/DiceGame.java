@@ -12,6 +12,8 @@ package frameworkdice;
 
 import java.util.Scanner;
 
+import bunco.BuncoGame;
+
 
 public class DiceGame implements IStrategyGame
 {
@@ -61,8 +63,8 @@ public class DiceGame implements IStrategyGame
 			Player newPlayer = new Player(scan.next());
 			playerCollection.addPlayer(newPlayer);
 		}
-		if (scan != null) scan.close();
-	}
+		scan.close();
+	};
 	
 	/**
 	 * Initializes the game
