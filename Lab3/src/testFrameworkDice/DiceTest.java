@@ -26,10 +26,30 @@ public class DiceTest
 		}
 
 	}
-
+	
 	@Test
-	public void test_getFace()
+	public void test_compareTo()
 	{
-		fail("Not yet implemented");
+		for(int i = 0 ; i < 100 ; ++i)
+		{
+			Dice testDice = new Dice();
+			Dice otherDice = new Dice();
+			while(otherDice.getResult() != 6)
+			{
+				otherDice.roll();
+			}
+			while(testDice.getResult() != 1)
+			{
+				testDice.roll();
+			}
+			assertTrue(testDice.compareTo(otherDice) == -1);
+			assertTrue(otherDice.compareTo(testDice) == 1);
+			while(otherDice.getResult() != 1)
+			{
+				otherDice.roll();
+			}
+			assertTrue(testDice.compareTo(otherDice) == 0);
+			assertTrue(otherDice.compareTo(testDice) == 0);
+		}
 	}
 }

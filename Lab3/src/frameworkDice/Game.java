@@ -17,6 +17,13 @@ public class Game implements IStrategyGame
 	protected DiceCollection diceCollection;
 	protected PlayerCollection playerCollection;
 
+	/**
+	 * Constructor for Game
+	 * 
+	 * @author: Hugo Desjardins-Libero, Andre-Philippe Boulet
+	 * 
+	 * @param int numOfTurn: The number of turn the game should have. int numOfDice: The number of dices to use
+	 */
 	public Game(int numOfTurn, int numOfDice)
 	{
 		turnCollection = new TurnCollection();
