@@ -1,3 +1,13 @@
+/******************************************************
+Course:  LOG121
+Project: Laboratoire 3
+Filename: Dice.java
+
+@author 	Andre-Philippe Boulet, Maude Payette, Hugo Desjardins-Libero
+@created	2013-11-01 Initial version
+@updated	2013-11-14
+ *******************************************************/
+
 package bunco;
 
 import java.util.Iterator;
@@ -7,14 +17,26 @@ import frameworkDice.DiceCollection;
 
 public class Turn extends frameworkDice.Turn
 {
-
+	/**
+	 * Constructor of turn
+	 * 
+	 * @author	Andre-Philippe Boulet
+	 * @param	diceCollection	The collection of dices assigned to this turn
+	 * 
+	 */
 	public Turn(DiceCollection diceCollection)
 	{
 		super(diceCollection);
 		// TODO Auto-generated constructor stub
 	}
 
-	
+	/**
+	 * Calculate the score specific to the bunco game once the dices are rolled
+	 * 
+	 * @author	Andre-Philippe Boulet
+	 * @return	Integer	The score
+	 * 
+	 */
 	public int calculateScore()
 	{
 
@@ -34,7 +56,8 @@ public class Turn extends frameworkDice.Turn
 			{
 				score = 5;
 			}
-		} else
+		} 
+		else
 		{
 			diceIterator = diceCollection.createIterator();
 			while (diceIterator.hasNext())
@@ -50,11 +73,24 @@ public class Turn extends frameworkDice.Turn
 		return score;
 	}
 
+	/**
+	 * Verify if the turn is done
+	 * 
+	 * @author	Andre-Philippe Boulet
+	 * @return	boolean		is it done
+	 * 
+	 */
 	public boolean isDone()
 	{
 		return rollScore == 0 || rollScore == 21;
 	}
 
+	/**
+	 * Verbose mode to tell what happened this turn.
+	 * 
+	 * @author	Andre-Philippe Boulet
+	 * 
+	 */
 	public void tellResult()
 	{
 		String output;

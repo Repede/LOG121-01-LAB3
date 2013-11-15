@@ -73,6 +73,17 @@ public class Game implements IStrategyGame
 	public void initializeDices() {}
 	
 	/**
+	 * Adds a player to the game
+	 * 
+	 * @author: Hugo Delibero
+	 * @param: player The player to add
+	 */
+	public void addPlayer(Player player)
+	{
+		playerCollection.addPlayer(player);
+	}
+	
+	/**
 	 * Initializes the turns
 	 * 
 	 * @author: Andre-Philippe Boulet
