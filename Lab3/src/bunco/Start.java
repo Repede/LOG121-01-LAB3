@@ -10,7 +10,6 @@ Filename: Dice.java
 
 package bunco;
 
-import java.util.Scanner;
 
 public class Start
 {

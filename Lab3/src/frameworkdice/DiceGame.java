@@ -12,9 +12,6 @@ package frameworkdice;
 
 import java.util.Scanner;
 
-import bunco.BuncoGame;
-
-
 public class DiceGame implements IStrategyGame
 {
 	protected int numberOfTurn;
